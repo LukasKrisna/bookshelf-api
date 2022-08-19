@@ -12,7 +12,7 @@ const addBookHandler = (request, h) => {
   const insertedAt = new Date().toISOString();
   const updatedAt = insertedAt;
 
-  if (name === undefined || name === '') {
+  if (!name) {
     const response = h.response({
       status: 'fail',
       message: 'Gagal menambahkan buku. Mohon isi nama buku',
